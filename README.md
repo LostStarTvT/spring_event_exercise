@@ -189,3 +189,5 @@ public class SimpleApplicationEventMulticaster implements ApplicationEventMultic
 ```
 
 以上完成整个监听器的设置，其实也是基于观察者模式进行实现，只不过这里面使用了HashMap进行存储监听器，而观察者使用List来进行存储。
+
+代码参考[自定义Spring事件监听机制](https://zhuanlan.zhihu.com/p/101141124)  
