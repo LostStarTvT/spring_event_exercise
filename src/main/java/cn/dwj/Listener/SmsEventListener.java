@@ -1,15 +1,15 @@
-package cn.dwj.monitor;
+package cn.dwj.Listener;
 
 import cn.dwj.event.OrderSuccessEvent;
 import cn.dwj.framework.ApplicationListener;
 
 /**
- * @Classname SmsService
+ * @Classname SmsEventListener
  * @Description TODO  监听 OrderSuccessEvent事件，有 OrderSuccessEvent事件时 就会回调改方法
  * @Date 2020/7/20 9:57
  * @Created by Seven
  */
-public class SmsEventMonitor implements ApplicationListener<OrderSuccessEvent> {
+public class SmsEventListener implements ApplicationListener<OrderSuccessEvent> {
     /**
      * 当监听到OrderSuccessEvent事件后会调用的回调函数。
      * @param event

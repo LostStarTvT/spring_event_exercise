@@ -1,8 +1,8 @@
 package cn.dwj.Test;
 
 import cn.dwj.framework.ApplicationContext;
-import cn.dwj.monitor.CarEventMonitor;
-import cn.dwj.monitor.SmsEventMonitor;
+import cn.dwj.Listener.CarEventListener;
+import cn.dwj.Listener.SmsEventListener;
 import cn.dwj.service.OrderService;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,16 +20,16 @@ public class DemoTest {
 
     // 之所以设计成public static，是为了能在OrderService中拿到SmsService，毕竟我没实现Autowired自动注入
     public static ApplicationContext applicationContext;
-    public static SmsEventMonitor smsEventMonitor;
+    public static SmsEventListener smsEventListener;
     public static OrderService orderService;
-    public static CarEventMonitor carEventMonitor;
+    public static CarEventListener carEventListener;
 
     @Before
     public void initApplicationContext() {
         applicationContext = new ApplicationContext();
-        smsEventMonitor =  (SmsEventMonitor) applicationContext.getBean(SmsEventMonitorUri);
+        smsEventListener =  (SmsEventListener) applicationContext.getBean(SmsEventMonitorUri);
         orderService = (OrderService) applicationContext.getBean(OrderServiceUri);
-        carEventMonitor = (CarEventMonitor) applicationContext.getBean(CarEventMonitorUri);
+        carEventListener = (CarEventListener) applicationContext.getBean(CarEventMonitorUri);
     }
 
     @Test

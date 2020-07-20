@@ -7,7 +7,7 @@ package cn.dwj.constant;
  * @Created by Seven
  */
 public class Constant {
-    public final static String SmsEventMonitorUri = "cn.dwj.monitor.SmsEventMonitor";
+    public final static String SmsEventMonitorUri = "cn.dwj.Listener.SmsEventListener";
     public final static String OrderServiceUri = "cn.dwj.service.OrderService";
-    public final static String CarEventMonitorUri = "cn.dwj.monitor.CarEventMonitor";
+    public final static String CarEventMonitorUri = "cn.dwj.Listener.CarEventListener";
 }
