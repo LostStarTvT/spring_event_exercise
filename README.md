@@ -1,5 +1,5 @@
 # Spring事件监听器
-模拟spring事件监听器demo，通过模拟生成订单来进行事件监听，当用户成功下订单时，便会触发监听器进行发送成功短信等其他操作。
+模拟spring事件监听器demo，通过模拟生成订单来进行事件监听，当用户成功下订单时，便会触发监听器进行发送成功短信等其他操作。ps：也就是MQ的大致思想，如果事件太多的话，就需要使用消息队里进行处理，即一个消息多个任务都会被触发。
 
 # 快速开始
 
@@ -14,12 +14,12 @@ main线程结束
 
 # 项目结构
 
-通过定义一个盗版的Spring容器来进行模拟Spring中的事件监听器逻辑，通过扩展增加event包下的类便能定义自定通知模型。monitor包中作为事件的监听器，有事件触发时便会调用其中的方法。
+通过定义一个盗版的Spring容器来进行模拟Spring中的事件监听器逻辑，通过扩展增加event包下的类便能定义自定通知模型。Listener包中作为事件的监听器，有事件触发时便会调用其中的方法。
 
 用户需要定义两个东西
 
 - 需要监听的事件(event包下)
-- 事件监听器(monitor包下)
+- 事件监听器(Listener包下)
 
 ### 事件
 
@@ -57,7 +57,7 @@ public class OtherEvent  extends ApplicationEvent {
 
 ### 事件监听器
 
-事件监听器接口如下:其中广播器是通过遍历事件监听器来进行发布通知
+事件监听器接口如下:它的触发是通过广播器遍历事件监听器来进行发布通知。
 
 ```java
 public interface ApplicationListener<E extends ApplicationEvent> {
@@ -190,4 +190,4 @@ public class SimpleApplicationEventMulticaster implements ApplicationEventMultic
 
 以上完成整个监听器的设置，其实也是基于观察者模式进行实现，只不过这里面使用了HashMap进行存储监听器，而观察者使用List来进行存储。
 
-代码参考[自定义Spring事件监听机制](https://zhuanlan.zhihu.com/p/101141124)  
+代码参考[自定义Spring事件监听机制](https://zhuanlan.zhihu.com/p/101141124)   [Spring事件监听机制](https://zhuanlan.zhihu.com/p/101128672)
